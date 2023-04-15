@@ -32,9 +32,6 @@ class EmotionDetector {
   /// FaceDetector is responsible for face appearance and as well as emotion
 
   Future<String?> detectEmotionFromImage({required File image}) async {
-    if (File == null) {
-      return "File can`t be null";
-    }
     /// converting file into ImageInput
     final inputImage = InputImage.fromFilePath(image.path);
 

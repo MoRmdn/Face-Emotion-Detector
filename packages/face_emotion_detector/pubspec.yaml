@@ -1,7 +1,7 @@
 name: face_emotion_detector
-description: A new Flutter package project.
-version: 0.0.1
-homepage:
+description: This package Detect the face emotion from image.
+version: 0.0.3
+homepage:  https://github.com/talha828/Face-Emotion-Detector
 
 environment:
   sdk: '>=2.19.6 <3.0.0'
@@ -10,12 +10,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_ml_kit: ^0.13.0
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-  google_ml_kit: ^0.13.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

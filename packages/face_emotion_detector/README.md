@@ -1,39 +1,73 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Face Emotion Detector
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+This Flutter package allows you to detect emotions from facial expressions in an image. The package is designed to detect four types of emotions: "Very Happy", "Happy", "Neutral", and "Not Happy". 
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## Installation
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+To use this package, add `face_emotion_detector` as a dependency in your `pubspec.yaml` file:
 
-## Features
+```yaml
+dependencies:
+  face_emotion_detector: ^1.0.0
+``` 
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
 
-## Getting started
+Then, run the command:
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```
+$ flutter pub get
+```
+# Usage
 
-## Usage
+## Import the package
+First, import the package into your Dart file:
+```
+import 'package:face_emotion_detector/face_emotion_detector.dart';
+```
+## Create an instance of EmotionDetector
+Then, create an instance of `EmotionDetector`:
+```
+final emotionDetector = EmotionDetector();
+```
+## Detect emotions from an image
+To detect emotions from an image, use the detectEmotionFromImage() method and pass the image file:
+```
+final label = await emotionDetector.detectEmotionFromImage(image: file);
+```
+The detectEmotionFromImage() method returns a String with the detected emotion.
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+## Example
+Here's an example of how to use the package:
+```
+import 'package:face_emotion_detector/face_emotion_detector.dart';
+import 'dart:io';
 
-```dart
-const like = 'sample';
+void main() async {
+  final emotionDetector = EmotionDetector();
+  final file = File('path_to_image');
+  final label = await emotionDetector.detectEmotionFromImage(image: file);
+  print(label);
+}
 ```
 
-## Additional information
+## Output
+The detectEmotionFromImage() method returns a String with one of the following values:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+* Very Happy
+* Happy
+* Neutral
+* Not Happy
+
+## Example
+Here are some example images and the expected output:
+
+
+
+## Contributing and Collaboration
+`Contributions and collaboration are welcome!` If you're interested in contributing, please see our contributing guidelines for more details. If you're interested in collaborating on this package, please feel free to reach out to us via email at `talha.developer.01@gmail.com`. We welcome all contributions and feedback.
+
+# License
+This package is licensed under the MIT License.
+
+
+
