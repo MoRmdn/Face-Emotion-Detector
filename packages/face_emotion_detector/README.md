@@ -61,6 +61,7 @@ The detectEmotionFromImage() method returns a String with one of the following v
 ## Example
 Here are some example images and the expected output:
 
+![ezgif-3-c05365544a](https://user-images.githubusercontent.com/61588132/232283578-d8ff80c4-8676-4175-bbfd-9d9fa85a4dd7.gif)
 
 
 ## Contributing and Collaboration
