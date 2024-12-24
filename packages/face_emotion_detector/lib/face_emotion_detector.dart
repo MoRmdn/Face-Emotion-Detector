@@ -58,26 +58,26 @@ class EmotionDetector {
   /// detect the mood by using smilingProbability value
   String detectMood({required double smileProb}) {
 
-    if (smileProb > 0.9) {
+    if (smileProb > 0.86) {
 
-      return 'Happy ${smileProb}';
-
-    }
-    else if (smileProb > 0.6) {
-
-      return 'Neutral ${smileProb}';
+      return 'Laughing';
 
     }
-    
+    else if (smileProb > 0.8) {
+
+      return 'Happy';
+
+    }
+
     else if (smileProb > 0.3) {
 
-      return 'Sad ${smileProb}';
+      return 'Neutral';
 
     }
-    
-    else  {
 
-      return 'Crying ${smileProb}';
+    else {
+
+      return 'Sad';
 
     }
 
