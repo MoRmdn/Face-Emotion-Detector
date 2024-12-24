@@ -31,7 +31,7 @@ class EmotionDetector {
   /// then pass it to FaceDetector
   /// FaceDetector is responsible for face appearance and as well as emotion
 
-  Future<String?> detectEmotionFromImage({required File image}) async {
+  Future<Map<String, dynamic>?> detectEmotionFromImage({required File image}) async {
     /// converting file into ImageInput
     final inputImage = InputImage.fromFilePath(image.path);
 
@@ -40,7 +40,10 @@ class EmotionDetector {
 
     /// check weather there is a face or not
     if (faces.isEmpty) {
-      return "Face Not found";
+      return {
+        "mood": "Face Not Found",
+        "smileProb": 0.0,
+      };
     }
 
     /// extract our image data from others parameters
@@ -52,7 +55,10 @@ class EmotionDetector {
     String? emotion = detectMood(smileProb:face.smilingProbability!);
 
     /// return the output
-    return emotion;
+    return {
+        "mood": "Face Not Found",
+        "smileProb": face.smilingProbability,
+      };
   }
 
   /// detect the mood by using smilingProbability value
