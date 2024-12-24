@@ -56,7 +56,7 @@ class EmotionDetector {
 
     /// return the output
     return {
-        "mood": "Face Not Found",
+        "mood": emotion,
         "smileProb": face.smilingProbability,
       };
   }
