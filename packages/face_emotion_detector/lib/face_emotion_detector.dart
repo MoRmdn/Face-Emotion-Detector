@@ -60,24 +60,24 @@ class EmotionDetector {
 
     if (smileProb > 0.9) {
 
-      return 'Happy';
+      return 'Happy ${smileProb}';
 
     }
     else if (smileProb > 0.6) {
 
-      return 'Neutral';
+      return 'Neutral ${smileProb}';
 
     }
     
     else if (smileProb > 0.3) {
 
-      return 'Sad';
+      return 'Sad ${smileProb}';
 
     }
     
     else  {
 
-      return 'Crying';
+      return 'Crying ${smileProb}';
 
     }
 
