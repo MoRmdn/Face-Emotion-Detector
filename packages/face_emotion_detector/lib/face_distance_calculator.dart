@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
+import '/models/distance_result_model.dart';
+import '/utils/enums.dart';
 
 class FaceDistanceCalculator {
   final double averageFaceWidthCm;
