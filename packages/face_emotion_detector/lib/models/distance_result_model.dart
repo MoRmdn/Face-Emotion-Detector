@@ -1,3 +1,7 @@
+import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
+
+import '../utils/enums.dart';
+
 class FaceDistanceResult {
   final FaceDetectionStatus status;
   final double distanceCm;

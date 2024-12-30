@@ -1,9 +1,11 @@
 import 'dart:io';
+
 import 'package:face_emotion_detector/face_emotion_detector.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-import '../generated/assets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:image_picker/image_picker.dart';
+
+import '../generated/assets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,6 +20,7 @@ class _HomePageState extends State<HomePage> {
   late File file;
   final ImagePicker picker = ImagePicker();
   String? label = "Loading...";
+  Map<String, dynamic>? emotion = {};
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -84,7 +87,13 @@ class _HomePageState extends State<HomePage> {
                     height: width * 0.04,
                   ),
                   flag
-                      ? Text(label!, textAlign: TextAlign.center,style: TextStyle(fontSize:width * 0.06 ,fontWeight: FontWeight.w600),)
+                      ? Text(
+                          label!,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: width * 0.06,
+                              fontWeight: FontWeight.w600),
+                        )
                       : Container(),
                   SizedBox(
                     height: width * 0.04,
@@ -97,9 +106,10 @@ class _HomePageState extends State<HomePage> {
                       if (photo != null) {
                         file = File(photo.path);
                         final emotionDetector = EmotionDetector();
-                        label = await emotionDetector.detectEmotionFromImage(
-                            image: file);
-                        print(label);
+                        emotion = await emotionDetector.detectEmotionFromImage(
+                          image: file,
+                        );
+                        debugPrint(label);
                         setState(() {
                           flag = true;
                         });
