@@ -80,6 +80,11 @@ class EmotionDetector {
       return 'Neutral';
 
     }
+    else if (smileProb > 0.1) {
+
+      return 'Tired';
+
+    }
 
     else {
 
