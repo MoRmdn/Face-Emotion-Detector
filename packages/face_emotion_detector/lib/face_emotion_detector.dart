@@ -77,7 +77,7 @@ class EmotionDetector {
 
     else if (smileProb > 0.3) {
 
-      return 'Neutral';
+      return 'Natural';
 
     }
     else if (smileProb > 0.1) {
